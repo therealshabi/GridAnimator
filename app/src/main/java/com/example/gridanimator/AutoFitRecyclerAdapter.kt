@@ -22,7 +22,13 @@ class AutoFitRecyclerAdapter(
     inner class AutoFitViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     fun getElements(): ArrayList<Int> {
-        return this.getElements()
+        return this.gridElements
+    }
+
+    fun addAll(elementList: ArrayList<Int>) {
+        this.gridElements.clear()
+        this.gridElements.addAll(elementList)
+        notifyDataSetChanged()
     }
 
     fun reset() {
