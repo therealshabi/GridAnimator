@@ -20,7 +20,7 @@ class AutoFitRecyclerAdapter(private val gridElements: ArrayList<Int>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AutoFitViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.grid_element, parent, false)
-        val params = UIUtilility.dpToPixels(parent.context, MainActivity.elementSize.toFloat())
+        val params = UIUtilility.dpToPixels(parent.context, GridActivity.elementSize.toFloat())
         view.layoutParams = ViewGroup.LayoutParams(params.toInt(), params.toInt())
         return AutoFitViewHolder(view)
     }

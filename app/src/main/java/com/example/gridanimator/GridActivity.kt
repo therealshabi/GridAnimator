@@ -3,14 +3,18 @@ package com.example.gridanimator
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.activity_grid.*
 
 
-class MainActivity : AppCompatActivity() {
+class GridActivity : AppCompatActivity() {
 
     companion object {
         var elementSize = 80
+        var elementSpacing = 2
+        var elementAnimationDelay = 250
+        var numOfElements = 20
     }
 
     private lateinit var gridAdapter: AutoFitRecyclerAdapter
@@ -22,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         gridAdapter = AutoFitRecyclerAdapter(ArrayList((1..20).map {
             it
         }))
+        val itemAnimator = DefaultItemAnimator()
+        itemAnimator.moveDuration = 1000
+        gridRecyclerView.itemAnimator = itemAnimator
         gridRecyclerView.layoutManager = GridLayoutManager(this, calculateColumns())
         gridRecyclerView.adapter = gridAdapter
     }

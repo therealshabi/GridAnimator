@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Grid Animator</string>
+    <string name="hint_element_number">No. of Elements (default 20)</string>
+    <string name="hint_element_size">Element Size in dp(default 60dp)</string>
+    <string name="hint_element_spacing">Element Spacing in dp(default 2dp)</string>
+    <string name="hint_element_animation">Element Animation delay in ms(default 250ms)</string>
+    <string name="create_grid_text">CREATE GRID</string>
+    <string name="grid_configuration_text">Grid Configuration</string>
 </resources>
