@@ -34,6 +34,10 @@ class GridActivity : AppCompatActivity() {
             this.layoutManager = GridLayoutManager(this@GridActivity, calculateColumns())
             this.adapter = gridAdapter
         }
+
+        resetButton.setOnClickListener {
+            gridAdapter.reset()
+        }
     }
 
     private fun calculateColumns(): Int {

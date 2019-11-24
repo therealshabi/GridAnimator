@@ -25,6 +25,14 @@ class AutoFitRecyclerAdapter(
         return this.getElements()
     }
 
+    fun reset() {
+        this.gridElements.clear()
+        this.gridElements.addAll(ArrayList((1..GridActivity.numOfElements).map {
+            it
+        }))
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AutoFitViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.grid_element, parent, false)
